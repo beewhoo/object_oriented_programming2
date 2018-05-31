@@ -24,10 +24,16 @@ class Zombie
     end
 
     def encounter
-      # 3 outcomes
-      # 1= escape
-      # 2= killed
-      # 3 = catch plague
+      if outrun_zombie?
+        return "you survived"
+      elsif surive_attack?
+        new_zombie = Zombie.new(1, 3)
+        @@horde << new_zombie
+        return  "You are Zombie"
+      else
+        return "You die"
+      end
+
     end
 
       def outrun_zombie?
@@ -98,23 +104,24 @@ end
 # p Zombie.all
 
 
-zom1 = Zombie.new(5, 5)
+zom1 = Zombie.new(1, 5)
 puts "--------------------------"
 p zom1.outrun_zombie?
 p zom1.surive_attack?
+p zom1.encounter
 
-# p Zombie.some_die_off
-# p Zombie.all
-#
+p Zombie.some_die_off
+p Zombie.all
+
+puts '----------------------------'
+p Zombie.new_day
+p Zombie.all
+p Zombie.all
+
 # puts '----------------------------'
-# p Zombie.new_day
-# p Zombie.all
-# p Zombie.all
 #
-# # puts '----------------------------'
-# #
-# p Zombie.some_die_off
-# p Zombie.all
+p Zombie.some_die_off
+p Zombie.all
 
 
-# p Zombie.all
+p Zombie.all
