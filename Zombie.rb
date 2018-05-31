@@ -24,12 +24,29 @@ class Zombie
     end
 
     def encounter
+      # 3 outcomes
+      # 1= escape
+      # 2= killed
+      # 3 = catch plague
     end
 
-    def outrun_zombie?
+      def outrun_zombie?
+        random = rand(@@max_speed)
+        if @speed > random
+        return false
+        else
+        return true
+      end
     end
+
 
     def surive_attack?
+      random = rand(@@max_strength)
+      if @strength > random
+      return false
+      else
+      return true
+    end
     end
 
 
@@ -63,8 +80,6 @@ class Zombie
       a += 1
     @@horde << temp
     end
-
-
   end
 
 
@@ -75,22 +90,25 @@ class Zombie
 
 
 
+
 end
 
 # p Zombie.new(4, 6)
-p Zombie.spawn
-p Zombie.all
+# p Zombie.spawn
+# p Zombie.all
 
 
-
+zom1 = Zombie.new(5, 5)
 puts "--------------------------"
+p zom1.outrun_zombie?
+p zom1.surive_attack?
 
-p Zombie.some_die_off
-p Zombie.all
-
-puts '----------------------------'
-p Zombie.new_day
-p Zombie.all
+# p Zombie.some_die_off
+# p Zombie.all
+#
+# puts '----------------------------'
+# p Zombie.new_day
+# p Zombie.all
 # p Zombie.all
 #
 # # puts '----------------------------'
