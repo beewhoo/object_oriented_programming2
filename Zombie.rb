@@ -41,11 +41,11 @@ class Zombie
   end
 
 
-  # def self.new_day
-  #   self.some_die_off
-  #   self.spawn
-  #   self.increase_plague_level
-  # end
+  def self.new_day
+    self.some_die_off
+    self.spawn
+    self.increase_plague_level
+  end
   #
   def self.some_die_off
   random = rand(0..10)
@@ -68,16 +68,16 @@ class Zombie
   end
 
 
-  # def self.increase_plague_level
-  #   @@plague_level += rand(2)
-  # end
+  def self.increase_plague_level
+    @@plague_level += rand(2)
+  end
 
 
 
 
 end
 
-p Zombie.new(4, 6)
+# p Zombie.new(4, 6)
 p Zombie.spawn
 p Zombie.all
 
@@ -85,9 +85,12 @@ p Zombie.all
 
 puts "--------------------------"
 
+p Zombie.some_die_off
+p Zombie.all
 
-# puts '----------------------------'
-#
+puts '----------------------------'
+p Zombie.new_day
+p Zombie.all
 # p Zombie.all
 #
 # # puts '----------------------------'
